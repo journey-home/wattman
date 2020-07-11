@@ -1,0 +1,8 @@
+prefix=/home/ros/wattman/devel
+
+Name: image_process
+Description: Description of image_process
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
