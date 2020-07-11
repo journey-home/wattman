@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="image_process" type="image_publisher_node.py" name="image_publisher" output="screen" />
+    <node pkg="image_process" type="image_processer_node" name="image_processer" output="screen" /> 
+</launch>
