@@ -8,26 +8,46 @@ wattman编程题
 4. 需要将代码上传到github上。
 
 系统环境
+
     ubuntu 16 
+
     ROS Kinetic Kame
+    
 下载
     git clone https://github.com/journey-home/wattman
 
 编译
+
     cd wattman;
+    
     catkin_make;
+
 启动
+
     1. master 节点
+
         cd wattman;source devel/setup.sh;
+
         roscore 
+
     2. image_publisher
+
         cd wattman;source devel/setup.sh;
+
         rosrun image_process image_publisher_node.py 
+
     3. image_processer
+
         cd wattman;source devel/setup.sh;
+
         rosrun image_process image_processer_node
+
 查看
+
     rosrun rviz rviz 
+
     add 选择 by tobic
+
         camera/image   为原图像
+
         camera/rotate_image  为处理后图像
