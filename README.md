@@ -19,28 +19,35 @@ wattman编程题
 编译
 
     cd wattman;
-    
+
     catkin_make;
 
-启动
+启动  
 
-    1. master 节点
+    cd wattman;source devel/setup.sh; 
 
-        cd wattman;source devel/setup.sh;
+    roslaunch image_process image_process.launch
+    
 
-        roscore 
+    node 方式启动
 
-    2. image_publisher
+        1. master 节点
 
-        cd wattman;source devel/setup.sh;
+            cd wattman;source devel/setup.sh;
 
-        rosrun image_process image_publisher_node.py 
+            roscore 
 
-    3. image_processer
+        2. image_publisher
 
-        cd wattman;source devel/setup.sh;
+            cd wattman;source devel/setup.sh;
 
-        rosrun image_process image_processer_node
+            rosrun image_process image_publisher_node.py 
+
+        3. image_processer
+
+            cd wattman;source devel/setup.sh;
+
+            rosrun image_process image_processer_node
 
 查看
 
