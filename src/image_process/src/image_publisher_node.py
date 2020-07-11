@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import rospy,os,cv2
+import rospy,os,cv2,rospkg
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 
@@ -19,7 +19,9 @@ def image_publisher():
     rospy.init_node('image_publisher', anonymous=True)
 
     # 获取 图片路径
-    image_list = find_images("./imgs_dir")
+    image_list = find_images(rospkg.RosPack().get_path("image_process")[:-17]+"./imgs_dir")
+    if(len(image_list) == 0):
+        rospy.loginfo("not find image!")
 
     # 根据图片数量设置 队列长度
     pub = rospy.Publisher('camera/image', Image, queue_size=len(image_list))
